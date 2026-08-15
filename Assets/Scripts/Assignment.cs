@@ -5,17 +5,17 @@ public class Assignment : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        As01_CheckNumberSign();
-        As02_GetDayName();
-        As03_ValidatePassword();
-        As04_GetGrade();
-        As05_IsLeapYear();
-        As06_Calculate();
-        As07_GetSeason();
-        As08_PurchasingSystemExample();
-        As09_RockPaperScissorsExample();
-        As10_CalculateWeaponDamage();
-        As11_DeterminePlayerRank();
+        // As01_CheckNumberSign();
+        // As02_GetDayName();
+        // As03_ValidatePassword();
+        // As04_GetGrade();
+        // As05_IsLeapYear();
+        // As06_Calculate();
+        // As07_GetSeason();
+        // As08_PurchasingSystemExample();
+        // As09_RockPaperScissorsExample();
+        // As10_CalculateWeaponDamage();
+        // As11_DeterminePlayerRank();
     }
 
     public int as01Number;
@@ -97,7 +97,7 @@ public class Assignment : MonoBehaviour
     public void As10_CalculateWeaponDamage()
     {
         // TODO: Add your implementation here
-        // Example: AssignmentDebugConsole.Log("result as string");
+        // Example: Debug.Log("result as string");
         throw new System.NotImplementedException();
     }
 
@@ -106,7 +106,7 @@ public class Assignment : MonoBehaviour
     public void As11_DeterminePlayerRank()
     {
         // TODO: Add your implementation here
-        // Example: AssignmentDebugConsole.Log("result as string");
+        // Example: Debug.Log("result as string");
         throw new System.NotImplementedException();
     }
 }

@@ -56,10 +56,10 @@ void As01_SyntaxIf()
 **Test Cases:**
 
 ```
-AS01.E1: Input: true → Output:
+WS01.01: Input: true → Output:
 The door opens.
 Knock knock!
-AS01.E1b: Input: false → Output:
+WS01.01b: Input: false → Output:
 Knock knock!
 ```
 
@@ -89,15 +89,14 @@ void As02_StringComparisonExample()
 **Logic ที่ต้อง implement:**
 
 - ตรวจสอบว่า password เท่ากับ "Moon" หรือไม่
-- แสดงข้อความที่เหมาะสมสำหรับ password ที่ถูกต้อง/ผิด
-- แสดงผลลัพธ์การเปรียบเทียบ boolean
+- แสดงข้อความที่เหมาะสมสำหรับ password ที่ถูกต้อง/ผิด ("password is correct" หรือ "wrong password")
 
 **Test Cases:**
 
 ```
-AS01.E1: Input: "Moon" → Output:
+WS01.02: Input: "Moon" → Output:
 password is correct
-AS01.E1b: Input: "Sun" → Output:
+WS01.02b: Input: "Sun" → Output:
 wrong password
 ```
 
@@ -135,15 +134,15 @@ void As03_NumberComparisonExample()
 **Test Cases:**
 
 ```
-AS01.E2: Input: 11 → Output:
+WS01.03: Input: 11 → Output:
 My Number > 10
 My Number >= 10
 My Number != 10
-AS01.E2b: Input: 10 → Output:
+WS01.03b: Input: 10 → Output:
 My Number == 10
 My Number >= 10
 My Number <= 10
-AS01.E2c: Input: 9 → Output:
+WS01.03c: Input: 9 → Output:
 My Number < 10
 My Number <= 10
 My Number != 10
@@ -182,12 +181,12 @@ void As04_AndOrOperatorExample()
 **Test Cases:**
 
 ```
-AS01.E3: Input: 10 → Output:
+WS01.04: Input: 10 → Output:
 My Number 8 > < 12
 My Number or 8 || 12
-AS01.E3b: Input: 7 → Output:
+WS01.04b: Input: 7 → Output:
 My Number or 8 || 12
-AS01.E3c: Input: 13 → Output:
+WS01.04c: Input: 13 → Output:
 My Number or 8 || 12
 ```
 
@@ -214,18 +213,18 @@ void As05_GuessingNumberExample()
 
 **Logic ที่ต้อง implement:**
 
-- แสดงตัวเลขเป้าหมาย โดย as05RandomNumber จะถูกกำหนดจาก Test case
-- เปรียบเทียบ as05GuessingNumber กับเป้าหมาย
-- แสดงข้อความชนะหรือแพ้
-- ชนะ : Guessing number {as05RandomNumber} Congratulations! You guessed the correct number.
-- แพ้ : I guess we can just agree to disagree.
-  **Test Cases:**
+- แสดงตัวเลขเป้าหมายด้วย `Debug.Log($"Guessing number {as05RandomNumber}");` เสมอ
+- เปรียบเทียบ as05GuessingNumber กับเป้าหมาย as05RandomNumber
+  - ชนะ : แสดงข้อความ `Congratulations! You guessed the correct number.`
+  - แพ้ : แสดงข้อความ `I guess we can just agree to disagree.`
+
+**Test Cases:**
 
 ```
-AS01.E4: Input: 5, 5 → Output:
+WS01.05: Input: 5, 5 → Output:
 Guessing number 5
 Congratulations! You guessed the correct number.
-AS01.E4b: Input: 3, 5 → Output:
+WS01.05b: Input: 3, 5 → Output:
 Guessing number 5
 I guess we can just agree to disagree.
 ```
@@ -246,21 +245,22 @@ void As06_GuessingNumberMoreOrLessExample()
 
 **Logic ที่ต้อง implement:**
 
-- แสดงตัวเลขเป้าหมาย โดย as06RandomNumber จะถูกกำหนดจาก Test case
-- ให้ feedback: ต่ำเกินไป, สูงเกินไป หรือถูกต้อง
-- ต่ำเกินไป : Guessing number {as06RandomNumber} Too low! Try again.
-- สูงเกินไป : Guessing number {as06RandomNumber} Too high! Try again.
-- ถูกต้อง :Guessing number {as06RandomNumber} Congratulations! We are same mind.
-  **Test Cases:**
+- แสดงตัวเลขเป้าหมายด้วย `Debug.Log($"Guessing number {as06RandomNumber}");` เสมอ
+- จากนั้นให้ feedback ตามเปรียบเทียบ as06GuessingNumber กับ as06RandomNumber:
+  - ต่ำเกินไป : `Too low! Try again.`
+  - สูงเกินไป : `Too high! Try again.`
+  - ถูกต้อง : `Congratulations! We are same mind.`
+
+**Test Cases:**
 
 ```
-AS01.E5: Input: 3, 5 → Output:
+WS01.06: Input: 3, 5 → Output:
 Guessing number 5
 Too low! Try again.
-AS01.E5b: Input: 7, 5 → Output:
+WS01.06b: Input: 7, 5 → Output:
 Guessing number 5
 Too high! Try again.
-AS01.E5c: Input: 5, 5 → Output:
+WS01.06c: Input: 5, 5 → Output:
 Guessing number 5
 Congratulations! We are same mind.
 ```
@@ -283,32 +283,32 @@ void As07_VerifyIdentityExample()
 
 **Logic ที่ต้อง implement:**
 
-- ตรวจสอบ as07Username และ as07Password โดย Testcase จะกำหนดให้ as07Username == "user", as07Password == "user123"
-  - ถ้า as07Username และ as07Password ถูกต้อง จะแสดงข้อความ "You have user access."
-  - ถ้า as07Username และ as07Password ไม่ถูกต้อง จะแสดงข้อความ "You have guest access."
-- จากนั้นตรวจสอบสถานะ VIP
-  - ถ้า as07IsPaid เป็นจริง จะแสดงข้อความ "welcome vip member"
-  - ถ้า as07IsPaid เป็นเท็จ จะแสดงข้อความ "welcome free member"
-- จากนั้นอายุสำหรับการเข้าถึงเนื้อหาเพิ่มเติม
-  - ถ้า as07Age มีค่ามากกว่า 18 จะแสดงข้อความ "You have access to exclusive content"
+- ตรวจสอบ as07Username และ as07Password (username == "user", password == "user123")
+  - ถ้า username และ password ถูกต้อง ให้แสดง "You have user access." แล้วทำการตรวจสอบเงื่อนไขย่อย **ซ้อนด้านใน (nested)** ต่อไปนี้:
+    - ตรวจสอบสถานะ VIP:
+      - ถ้า as07IsPaid เป็นจริง แสดงข้อความ "welcome vip member."
+      - ถ้า as07IsPaid เป็นเท็จ แสดงข้อความ "welcome free member."
+    - ตรวจสอบอายุ:
+      - ถ้า as07Age มากกว่า 18 แสดงข้อความ "You have access to exclusive content."
+  - ถ้า username หรือ password ไม่ถูกต้อง ให้แสดงข้อความ "You have guest access." (และไม่ต้องตรวจสอบ VIP หรืออายุต่อ)
 
 **Test Cases:**
 
 ```
-AS01.E7: Input: "user", "user123", 20, true → Output:
+WS01.07: Input: "user", "user123", 20, true → Output:
 You have user access.
 welcome vip member.
 You have access to exclusive content.
 
-AS01.E7b: Input: "user", "user123", 15, true → Output:
+WS01.07b: Input: "user", "user123", 15, true → Output:
 You have user access.
 welcome vip member.
 
-AS01.E7c: Input: "user", "user123", 20, false → Output:
+WS01.07c: Input: "user", "user123", 20, false → Output:
 You have user access.
 welcome free member.
 
-AS01.E7d: Input: "guest", "pass", 20, false → Output:
+WS01.07d: Input: "guest", "pass", 20, false → Output:
 You have guest access.
 ```
 
@@ -676,25 +676,26 @@ void As08_PurchasingSystemExample()
 
 **Logic ที่ต้อง implement:**
 
-- ตรวจสอบว่าสินค้ามีใน stock หรือไม่
-  - ถ้าไม่เพียงพอให้แสดงข้อความ "สินค้าหมด"
-- จากนั้นตรวจสอบการชำระเงินเพียงพอ
-  - ถ้าเพียงพอให้แสดงข้อความ "คุณได้รับสินค้าแล้ว"
-  - ถ้าไม่พอให้แสดงข้อความ "คุณมีเงินไม่พอ"
-- จากนั้นคำนวณและแสดงเงินทอนถ้าเหมาะสม
-  - แสดงข้อความ "คุณได้รับเงินทอน {change} บาท"
+- ตรวจสอบว่าสินค้าใน stock (`as08Quantity`) มีอยู่หรือไม่
+  - ถ้า `as08Quantity <= 0` ให้แสดงข้อความ "สินค้าหมด"
+  - ถ้ามีสินค้าใน stock (`as08Quantity > 0`) ให้ตรวจสอบเงินชำระ (`as08Payment`) กับราคาสินค้า 1 ชิ้น (`as08Price`):
+    - ถ้า `as08Payment >= as08Price`:
+      - แสดงข้อความ "คุณได้รับสินค้าแล้ว"
+      - หากมีเงินทอน (`as08Payment > as08Price`) ให้แสดงข้อความ "คุณได้รับเงินทอน {as08Payment - as08Price} บาท"
+    - ถ้า `as08Payment < as08Price`:
+      - แสดงข้อความ "คุณมีเงินไม่พอ"
 
 **Test Cases:**
 
 ```
-AS01.E6: Input: 1, 10, 20 → Output:
+AS01.08a: Input: 1, 10, 20 → Output:
 คุณได้รับสินค้าแล้ว
 คุณได้รับเงินทอน 10 บาท
-AS01.E6b: Input: 1, 10, 10 → Output:
+AS01.08b: Input: 1, 10, 10 → Output:
 คุณได้รับสินค้าแล้ว
-AS01.E6c: Input: 1, 10, 5 → Output:
+AS01.08c: Input: 1, 10, 5 → Output:
 คุณมีเงินไม่พอ
-AS01.E6d: Input: 0, 10, 20 → Output:
+AS01.08d: Input: 0, 10, 20 → Output:
 สินค้าหมด
 ```
 
@@ -715,19 +716,21 @@ void As09_RockPaperScissorsExample()
 **Logic ที่ต้อง implement:**
 
 - ตรวจสอบ as09UserChoice (0=Rock, 1=Paper, 2=Scissors)
-- กำหนดผู้ชนะโดยใช้กฎของเกม
-- แสดงผลลัพธ์เป็นภาษาไทย
-- as09ComputerChoice จะถูกกำหนดจาก Test Case
+  - หาก `as09UserChoice` ไม่อยู่ในช่วง 0 ถึง 2 (เช่น < 0 หรือ > 2) ให้แสดงข้อความ `"กรุณาเลือกเป็นตัวเลขที่ถูกต้อง"`
+- หากตัวเลขถูกต้อง ให้เปรียบเทียบกับ `as09ComputerChoice` (0=Rock, 1=Paper, 2=Scissors) แล้วแสดงผลลัพธ์:
+  - กรณีเสมอ (เลือกเหมือนกัน): `"เสมอ"`
+  - กรณีผู้เล่นชนะ (0 ชนะ 2, 1 ชนะ 0, 2 ชนะ 1): `"คุณชนะ!"`
+  - กรณีผู้เล่นแพ้: `"คุณแพ้!"`
 
 **Test Cases:**
 
 ```
-AS01.E8: Input: 0, 0 → Output: เสมอ
-AS01.E8b: Input: 0, 2 → Output: คุณชนะ!
-AS01.E8c: Input: 1, 0 → Output: คุณชนะ!
-AS01.E8d: Input: 2, 1 → Output: คุณชนะ!
-AS01.E8e: Input: 2, 0 → Output: คุณแพ้!
-AS01.E8f: Input: 3, 0 → Output: กรุณาเลือกเป็นตัวเลขที่ถูกต้อง
+AS01.09a: Input: 0, 0 → Output: เสมอ
+AS01.09b: Input: 0, 2 → Output: คุณชนะ!
+AS01.09c: Input: 1, 0 → Output: คุณชนะ!
+AS01.09d: Input: 2, 1 → Output: คุณชนะ!
+AS01.09e: Input: 2, 0 → Output: คุณแพ้!
+AS01.09f: Input: 3, 0 → Output: กรุณาเลือกเป็นตัวเลขที่ถูกต้อง
 ```
 
 ### 3. As10_CalculateWeaponDamage (6 test cases)
@@ -760,12 +763,12 @@ void As10_CalculateWeaponDamage()
 **Test Cases:**
 
 ```
-AS01.08: Input: "sword", 50 → Output: 65
-AS01.08b: Input: "axe", 50 → Output: 70
-AS01.08c: Input: "bow", 50 → Output: 60
-AS01.08d: Input: "staff", 50 → Output: 75
-AS01.08e: Input: "dagger", 50 → Output: 55
-AS01.08f: Input: "unknown", 50 → Output: 50
+AS01.10a: Input: "sword", 50 → Output: 65
+AS01.10b: Input: "axe", 50 → Output: 70
+AS01.10c: Input: "bow", 50 → Output: 60
+AS01.10d: Input: "staff", 50 → Output: 75
+AS01.10e: Input: "dagger", 50 → Output: 55
+AS01.10f: Input: "unknown", 50 → Output: 50
 ```
 
 **Game Context:** ระบบการต่อสู้, การปรับสมดุลอาวุธ, การคำนวณความเสียหาย
@@ -804,40 +807,54 @@ void As11_DeterminePlayerRank()
 
 **Logic ที่ต้อง implement:**
 
-- ตรวจสอบ inputs (ไม่มีค่าลบ)
-- กำหนดอันดับตาม score thresholds
-- คำนวณ base coins + time bonus
-- แสดงข้อความอันดับและรางวัลที่จัดรูปแบบ
-
-**Rank Thresholds:**
-
-- Gold: 8000+ คะแนน (100 base coins)
-- Silver: 6000-7999 คะแนน (75 base coins)
-- Bronze: 4000-5999 คะแนน (50 base coins)
-- Participation: 0-3999 คะแนน (25 base coins)
-
-**Time Bonus:**
-
-- 0-30 นาที: +25 coins
-- 31-60 นาที: +10 coins
-- 61+ นาที: +0 coins
+- ตรวจสอบ inputs (หาก `as11Score < 0` หรือ `as11CompletionTime < 0` ให้แสดง `"Invalid score or time"`)
+- กำหนดอันดับตาม score thresholds:
+  - Gold: 8000+ คะแนน (100 base coins)
+  - Silver: 6000-7999 คะแนน (75 base coins)
+  - Bronze: 4000-5999 คะแนน (50 base coins)
+  - Participation: 0-3999 คะแนน (25 base coins)
+- คำนวณ Time Bonus:
+  - 0-30 นาที: +25 coins
+  - 31-60 นาที: +10 coins
+  - 61+ นาที: +0 coins
+- แสดงข้อความอันดับและรางวัลที่จัดรูปแบบ: `{rank} Rank - {baseCoins + timeBonus} coins earned!`
 
 **Test Cases:**
 
 ```
-AS01.09: Input: -1, 30 → Output: Invalid score or time
-AS01.09b: Input: 5000, -5 → Output: Invalid score or time
-AS01.09c: Input: 0, 0 → Output: Participation Rank - 50 coins earned!
-AS01.09d: Input: 2000, 25 → Output: Participation Rank - 50 coins earned!
-AS01.09e: Input: 2000, 35 → Output: Participation Rank - 35 coins earned!
-AS01.09f: Input: 2000, 70 → Output: Participation Rank - 25 coins earned!
-AS01.09g: Input: 4000, 30 → Output: Bronze Rank - 75 coins earned!
-AS01.09h: Input: 4500, 45 → Output: Bronze Rank - 60 coins earned!
-AS01.09i: Input: 6000, 30 → Output: Silver Rank - 100 coins earned!
-AS01.09j: Input: 6500, 45 → Output: Silver Rank - 85 coins earned!
-AS01.09k: Input: 8000, 30 → Output: Gold Rank - 125 coins earned!
-AS01.09l: Input: 8500, 45 → Output: Gold Rank - 110 coins earned!
-[Test cases เพิ่มเติมครอบคลุม boundary conditions...]
+AS01.11a: Input: -1, 30 → Output: Invalid score or time
+AS01.11b: Input: 5000, -5 → Output: Invalid score or time
+AS01.11c: Input: -10, -10 → Output: Invalid score or time
+AS01.11d: Input: 0, 0 → Output: Participation Rank - 50 coins earned!
+AS01.11e: Input: 0, 30 → Output: Participation Rank - 50 coins earned!
+AS01.11f: Input: 0, 31 → Output: Participation Rank - 35 coins earned!
+AS01.11g: Input: 0, 60 → Output: Participation Rank - 35 coins earned!
+AS01.11h: Input: 0, 61 → Output: Participation Rank - 25 coins earned!
+AS01.11i: Input: 2000, 25 → Output: Participation Rank - 50 coins earned!
+AS01.11j: Input: 2000, 35 → Output: Participation Rank - 35 coins earned!
+AS01.11k: Input: 2000, 70 → Output: Participation Rank - 25 coins earned!
+AS01.11l: Input: 3999, 30 → Output: Participation Rank - 50 coins earned!
+AS01.11m: Input: 3999, 60 → Output: Participation Rank - 35 coins earned!
+AS01.11n: Input: 3999, 61 → Output: Participation Rank - 25 coins earned!
+AS01.11o: Input: 4000, 0 → Output: Bronze Rank - 75 coins earned!
+AS01.11p: Input: 4000, 30 → Output: Bronze Rank - 75 coins earned!
+AS01.11q: Input: 4000, 31 → Output: Bronze Rank - 60 coins earned!
+AS01.11r: Input: 4000, 60 → Output: Bronze Rank - 60 coins earned!
+AS01.11s: Input: 4000, 61 → Output: Bronze Rank - 50 coins earned!
+AS01.11t: Input: 4500, 45 → Output: Bronze Rank - 60 coins earned!
+AS01.11u: Input: 5999, 30 → Output: Bronze Rank - 75 coins earned!
+AS01.11v: Input: 5999, 60 → Output: Bronze Rank - 60 coins earned!
+AS01.11w: Input: 5999, 61 → Output: Bronze Rank - 50 coins earned!
+AS01.11x: Input: 6000, 0 → Output: Silver Rank - 100 coins earned!
+AS01.11y: Input: 6000, 30 → Output: Silver Rank - 100 coins earned!
+AS01.11z: Input: 6000, 31 → Output: Silver Rank - 85 coins earned!
+AS01.11aa: Input: 6000, 60 → Output: Silver Rank - 85 coins earned!
+AS01.11ab: Input: 6000, 61 → Output: Silver Rank - 75 coins earned!
+AS01.11ac: Input: 6500, 45 → Output: Silver Rank - 85 coins earned!
+AS01.11ad: Input: 7999, 30 → Output: Silver Rank - 100 coins earned!
+AS01.11ae: Input: 8000, 30 → Output: Gold Rank - 125 coins earned!
+AS01.11af: Input: 8000, 60 → Output: Gold Rank - 110 coins earned!
+AS01.11ag: Input: 8500, 61 → Output: Gold Rank - 100 coins earned!
 ```
 
 **Game Context:** ความก้าวหน้าของผู้เล่น, ระบบ leaderboard, รางวัล achievement

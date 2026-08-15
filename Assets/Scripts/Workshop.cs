@@ -6,13 +6,13 @@ public class Workshop : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        As01_SyntaxIf();
-        As02_StringComparisonExample();
-        As03_NumberComparisonExample();
-        As04_AndOrOperatorExample();
-        As05_GuessingNumberExample();
-        As06_GuessingNumberMoreOrLessExample();
-        As07_VerifyIdentityExample();
+        // As01_SyntaxIf();
+        // As02_StringComparisonExample();
+        // As03_NumberComparisonExample();
+        // As04_AndOrOperatorExample();
+        // As05_GuessingNumberExample();
+        // As06_GuessingNumberMoreOrLessExample();
+        // As07_VerifyIdentityExample();
     }
 
     public bool isSixOClock;
