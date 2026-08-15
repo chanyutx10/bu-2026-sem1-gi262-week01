@@ -1,0 +1,57 @@
+# Standard Unity gitignore
+# https://github.com/github/gitignore/blob/main/Unity.gitignore
+
+#[Ll]ibrary/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Asset store packages
+/[Aa]ssets/AssetStoreTools*
+
+# Visual Studio / MonoDevelop / Rider / VS Code
+.vs/
+.idea/
+.vscode/
+/*.csproj
+/*.unityproj
+/*.sln
+/*.slnx
+/*.suo
+/*.tmp
+/*.user
+/*.userprefs
+/*.pidb
+/*.booproj
+/*.svd
+/*.pdb
+/*.mdb
+/*.opendb
+/*.VC.db
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+# Unity3D Generated File On Crash Reports
+sysinfo.txt
+
+# Builds
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
